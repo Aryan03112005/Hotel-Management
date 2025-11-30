@@ -1,0 +1,604 @@
+/* --- Booking Page Specific Styles --- */
+
+body {
+    background-color: var(--color-light); /* Lighter background for the booking page */
+}
+
+/* --- Booking Header --- */
+.booking-header {
+    background-color: #f0f8ff; /* A soft blue background for the header */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.booking-logo {
+    display: flex;
+    align-items: center;
+}
+
+.booking-logo a {
+    display: flex;
+    align-items: center;
+    color: var(--color-dark); /* Ensure logo link color is dark */
+}
+
+.booking-logo img {
+    height: 60px; /* Adjust as needed */
+    margin-right: 15px;
+}
+
+.booking-logo h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.booking-logo p {
+    font-size: 0.85em;
+    color: #666;
+    line-height: 1.3;
+}
+
+.booking-nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.booking-nav-links a {
+    color: var(--color-dark);
+    font-weight: 600;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.booking-nav-links a:hover {
+    color: var(--color-gold);
+}
+
+.booking-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.booking-nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Booking Search Bar --- */
+.booking-search-bar {
+    background-color: var(--color-dark); /* Dark blue background */
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 15px auto 0;
+    border-radius: 8px;
+}
+
+.search-input-group {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.date-picker {
+    position: relative;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.date-picker i {
+    color: var(--color-gold);
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.date-picker input {
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 1em;
+    color: var(--color-text-dark);
+    width: 100%;
+    cursor: pointer;
+    background: transparent; /* Essential for Flatpickr */
+}
+
+.nights-display {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 100px; /* Fixed width for nights */
+    justify-content: center;
+}
+
+.nights-display input {
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 1em;
+    color: var(--color-text-dark);
+    text-align: center;
+    background: transparent;
+    cursor: default;
+}
+
+.btn-check-availability {
+    background-color: var(--color-gold);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.btn-check-availability:hover {
+    background-color: var(--color-gold-dark);
+}
+
+.booking-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background-color: #555; /* Darker gray for secondary buttons */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+}
+
+.dropdown-select {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-select select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #555;
+    color: white;
+    padding: 10px 30px 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    font-family: var(--font-body);
+    outline: none;
+}
+
+.dropdown-select::after {
+    content: '\f078'; /* FontAwesome caret-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+}
+
+.dropdown-select select:hover {
+    background-color: #777;
+}
+
+/* --- Main Content Layout --- */
+.booking-main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Rooms list takes 2/3, sidebar 1/3 */
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.rooms-list-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.room-card {
+    display: flex;
+    gap: 25px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.room-image {
+    flex: 0 0 250px; /* Fixed width for image */
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-details {
+    flex-grow: 1;
+    padding: 15px 0;
+}
+
+.room-details h3 {
+    font-family: var(--font-heading);
+    font-size: 1.7em;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.room-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.see-more {
+    font-size: 0.9em;
+    color: var(--color-gold);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.room-features {
+    display: flex;
+    gap: 15px;
+    font-size: 1.2em;
+    color: #888;
+}
+
+.room-booking-options {
+    flex: 0 0 300px; /* Fixed width for booking options */
+    padding: 15px 20px;
+    background-color: #f8f8f8; /* Light background for options section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border-left: 1px solid #eee;
+}
+
+.room-price {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.room-price .per-night {
+    font-size: 0.6em;
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: #666;
+}
+
+.room-selectors {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.selector-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selector-group label {
+    font-size: 0.9em;
+    color: #555;
+    white-space: nowrap;
+    width: 80px; /* Align labels */
+}
+
+.quantity-control {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.quantity-control button {
+    background-color: #eee;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.quantity-control button:hover {
+    background-color: #ddd;
+}
+
+.quantity-control input {
+    border: none;
+    text-align: center;
+    width: 40px;
+    font-size: 1em;
+    color: var(--color-dark);
+    background: white;
+}
+
+.selector-group .dropdown-select {
+    flex-grow: 1;
+    width: auto; /* Override default 100% for select */
+}
+
+.selector-group .dropdown-select select {
+    background-color: white;
+    color: var(--color-dark);
+    border: 1px solid #ccc;
+    padding: 8px 30px 8px 10px;
+    font-size: 0.9em;
+}
+.selector-group .dropdown-select::after {
+    color: var(--color-dark);
+}
+
+/* --- Sidebar Content --- */
+.sidebar-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    height: fit-content; /* Adjust height based on content */
+}
+
+.promo-code-box,
+.reservation-summary-box {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 25px;
+}
+
+.reservation-summary-box:last-child {
+    border-bottom: none; /* No border for the last box */
+    padding-bottom: 0;
+}
+
+.promo-code-box h4,
+.reservation-summary-box h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4em;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+}
+
+.promo-input-group {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.promo-input-group input {
+    border: none;
+    padding: 10px 15px;
+    flex-grow: 1;
+    font-size: 0.95em;
+    outline: none;
+}
+
+.btn-apply {
+    background-color: #007bff; /* A distinct blue for apply */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-apply:hover {
+    background-color: #0056b3;
+}
+
+.reservation-summary-box .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.summary-item .nights-label {
+    background-color: var(--color-gold);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.summary-item.total-charges,
+.summary-item.total-taxes {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.summary-grand-total {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.btn-confirm-reservation {
+    background-color: #28a745; /* Green for confirmation */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+}
+
+.btn-confirm-reservation:hover {
+    background-color: #218838;
+}
+
+/* --- Footer for Booking Page (adjust if needed) --- */
+.booking-footer {
+    background-color: var(--color-dark); /* Using dark color from main site */
+    color: #ccc;
+    padding: 70px 5% 20px;
+    font-size: 0.95em;
+    margin-top: 50px; /* Space from main content */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .booking-header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+    .booking-nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .booking-search-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    .search-input-group {
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+    .date-picker, .nights-display {
+        flex: 1 1 calc(50% - 5px); /* Two columns on smaller screens */
+        min-width: unset;
+    }
+    .nights-display {
+        flex: 1 1 100%; /* Nights takes full width if only one date picker is active */
+    }
+    .btn-check-availability {
+        width: 100%;
+        margin-right: 0;
+    }
+    .booking-controls {
+        width: 100%;
+        justify-content: space-around;
+        gap: 5px;
+    }
+    .booking-controls .btn-secondary,
+    .booking-controls .dropdown-select {
+        flex: 1 1 auto;
+    }
+
+    .booking-main-content {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .room-card {
+        flex-direction: column;
+    }
+    .room-image {
+        width: 100%;
+        flex: none;
+        max-height: 250px;
+    }
+    .room-details, .room-booking-options {
+        padding: 15px 20px;
+        border-left: none;
+    }
+    .room-booking-options {
+        align-items: stretch;
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+    .room-price {
+        text-align: center;
+    }
+    .room-selectors {
+        flex-direction: row; /* Keep selectors in a row if space allows */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .selector-group {
+        flex: 1 1 calc(50% - 10px); /* Two columns for selectors */
+        justify-content: center;
+    }
+    .selector-group label {
+        width: auto;
+    }
+    .quantity-control input {
+        width: 30

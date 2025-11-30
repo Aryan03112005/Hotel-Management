@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed! - Hotel Raj Mahal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .confirmation-content {
+            padding: 120px 5% 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .confirmation-content i {
+            font-size: 5em;
+            color: #28a745; /* Green checkmark */
+            margin-bottom: 20px;
+        }
+        .confirmation-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5em;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        .confirmation-content p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .booking-details-box {
+            background-color: var(--color-bg-ivory);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        .booking-details-box h2 {
+            font-size: 1.8em;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .booking-details-box h2::after {
+            margin: 10px 0 0 0;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dotted #ccc;
+            font-size: 1.1em;
+        }
+        .detail-row span:first-child {
+            font-weight: 600;
+            color: var(--color-dark);
+        }
+        .detail-row span:last-child {
+            color: var(--color-gold-dark);
+        }
+        .btn-home {
+            background-color: var(--color-gold);
+            color: white;
+            padding: 15px 30px;
+            margin-top: 40px;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+        .btn-home:hover {
+            background-color: var(--color-gold-dark);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar scrolled">
+            <div class="logo">
+                <a href="index.html">Raj Mahal</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="confirmation-content">
+            <i class="fas fa-check-circle"></i>
+            <h1>Booking Confirmed!</h1>
+            <p>Your royal stay at Hotel Raj Mahal The Palace has been successfully reserved. A confirmation email with all details has been sent.</p>
+
+            <div class="booking-details-box">
+                <h2>Reservation Summary</h2>
+                <div class="detail-row">
+                    <span>Booking ID</span>
+                    <span>RM-2025-1201-9876</span>
+                </div>
+                <div class="detail-row">
+                    <span>Check-in Date</span>
+                    <span>01 Dec, 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span>Total Nights</span>
+                    <span>3 nights</span>
+                </div>
+                <div class="detail-row">
+                    <span>Room Type</span>
+                    <span>2 x Super Deluxe Room</span>
+                </div>
+                <div class="detail-row">
+                    <span>Grand Total Paid</span>
+                    <span>INR 18,500.00</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn-home">Return to Home Page</a>
+        </section>
+    </main>
+
+    </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment - Hotel Raj Mahal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .payment-content {
+            padding: 120px 5% 80px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .payment-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3em;
+            color: var(--color-dark);
+            margin-bottom: 10px;
+        }
+        .payment-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .total-display {
+            font-family: var(--font-heading);
+            font-size: 2.5em;
+            color: var(--color-gold);
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+        .qr-section {
+            padding: 20px 0;
+        }
+        .qr-section img {
+            width: 200px;
+            height: 200px;
+            border: 5px solid var(--color-gold);
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .qr-section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .btn-payment-success {
+            background-color: #28a745; /* Green for success */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-payment-success:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar scrolled">
+            <div class="logo">
+                <a href="index.html">Raj Mahal</a>
+            </div>
+             <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="payment-content">
+            <h1 style="padding-top: 50px;">Confirm & Pay</h1>
+            <p style="font-size: 1.1em; color: #777;">Scan the QR code below to complete your secure reservation.</p>
+
+            <div class="payment-box">
+                <div class="total-display" id="paymentTotal">
+                    Total: INR 0.00
+                </div>
+
+                <div class="qr-section">
+                    <img src="qr-code-placeholder.png" alt="QR Code for Payment">
+                    <p>Use any UPI App to scan and pay the total amount shown above.</p>
+                </div>
+
+                <button class="btn-payment-success" id="confirmPaymentBtn">I HAVE MADE THE PAYMENT</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const total = urlParams.get('total');
+            const paymentTotalElement = document.getElementById('paymentTotal');
+            const confirmBtn = document.getElementById('confirmPaymentBtn');
+
+            if (total) {
+                paymentTotalElement.textContent = `Total: INR ${total}`;
+            } else {
+                paymentTotalElement.textContent = `Total: INR 0.00 (Error)`;
+            }
+
+            confirmBtn.addEventListener('click', () => {
+                // Simulate payment success and redirect to confirmation page
+                window.location.href = 'confirmation.html';
+            });
+        });
+    </script>
+</body>
+</html>

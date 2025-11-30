@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Dining Menu - Hotel Raj Mahal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Menu Section Layout */
+        .menu-page-header {
+            background-color: var(--color-dark);
+            color: white;
+            padding: 120px 5% 60px;
+            text-align: center;
+            margin-top: 82px; /* Offset by navbar height */
+        }
+        
+        .menu-page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 4em;
+            color: var(--color-gold);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .menu-page-header p {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-top: 20px;
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-style: italic;
+        }
+        
+        /* Menu Content Styling */
+        .menu-section {
+            padding: 80px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-category h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8em;
+            text-align: center;
+            color: var(--color-gold-dark);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .menu-category h2::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 1px;
+            background: var(--color-gold);
+            margin: 10px auto 0;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 25px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .menu-item-info {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .dish-name {
+            font-family: var(--font-heading);
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 5px;
+        }
+
+        .dish-description {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .dish-price {
+            font-family: var(--font-body);
+            font-size: 1.4em;
+            font-weight: 600;
+            color: var(--color-gold);
+            white-space: nowrap;
+        }
+
+        /* Highlight Section for Chef's Special */
+        .chef-special-banner {
+            background-color: var(--color-dark);
+            color: white;
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .chef-special-banner h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2em;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .chef-special-banner h3 i {
+            color: var(--color-gold);
+            margin-right: 15px;
+        }
+
+        .chef-special-banner p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .menu-page-header h1 {
+                font-size: 3em;
+            }
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .dish-price {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+            .menu-category h2 {
+                 font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar scrolled">
+            <div class="logo">
+                <a href="index.html">Raj Mahal</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Rooms/Suites <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="executive-room.html">Executive Room</a></li>
+                        <li><a href="deluxe-room.html">Deluxe Room</a></li>
+                        <li><a href="super-deluxe-room.html">Super Deluxe Room</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="menu-page-header">
+            <p>The Grandeur of Heritage Dining</p>
+            <h1>Fine Dining Cuisine</h1>
+            <p>Experience the royal flavors of Central India, meticulously prepared using traditional techniques and the freshest ingredients.</p>
+        </section>
+
+        <section class="chef-special-banner">
+            <h3><i class="fas fa-crown"></i> Chef's Signature Heritage Dish</h3>
+            <p> **Shahi Rajmahal Biryani:** Aromatic basmati rice cooked with saffron, slow-braised lamb shanks, and a secret blend of twelve spices, sealed in a clay pot and served with rich Raita (yogurt dip).</p>
+        </section>
+
+        <section id="appetizers" class="menu-section menu-category">
+            <h2>Appetizers (Agaaz)</h2>
+            
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Orchha Palace Galouti Kebabs</div>
+                    <p class="dish-description">Melt-in-your-mouth minced mutton patties, flavored with smoky Awadhi spices, served on miniature saffron bread.</p>
+                </div>
+                <div class="dish-price">₹ 950</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Paneer Tikka Angaar</div>
+                    <p class="dish-description">Cottage cheese cubes marinated in fiery red chili and yogurt, chargrilled to perfection in the Tandoor oven.</p>
+                </div>
+                <div class="dish-price">₹ 780</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Betwa River Fish Fry (Seasonal)</div>
+                    <p class="dish-description">Fresh catch of the day, marinated in a light blend of ginger, garlic, and lime, pan-fried to a crisp golden finish.</p>
+                </div>
+                <div class="dish-price">₹ 1,100</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="main-courses" class="menu-section menu-category">
+            <h2>Main Courses (Dawat-e-Khas)</h2>
+            
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Laal Maas Rajwada</div>
+                    <p class="dish-description">The signature Rajasthani delicacy—tender lamb cooked in a vibrant, smokey sauce of mathania chili and rustic spices. Highly recommended.</p>
+                </div>
+                <div class="dish-price">₹ 1,650</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Dal Makhani Heritage</div>
+                    <p class="dish-description">Black lentils simmered overnight on slow charcoal fire, enriched with fresh cream and white butter for a luxurious texture.</p>
+                </div>
+                <div class="dish-price">₹ 850</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Goan Prawn Curry (Xec Xec)</div>
+                    <p class="dish-description">Jumbo prawns cooked in a rich, spicy coconut and cashew gravy, perfectly pairing the coastal flavor with palace elegance.</p>
+                </div>
+                <div class="dish-price">₹ 1,800</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Aloo Gobhi Mughlai</div>
+                    <p class="dish-description">Florets of cauliflower and potatoes braised in a mild, creamy saffron and cashew-based Mughal curry.</p>
+                </div>
+                <div class="dish-price">₹ 920</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="desserts" class="menu-section menu-category">
+            <h2>Desserts (Meetha Anjaam)</h2>
+            
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Saffron Ras Malai</div>
+                    <p class="dish-description">Soft chenna (cheese curd) patties soaked in thickened milk, infused with aromatic cardamom and Kashmiri saffron strands.</p>
+                </div>
+                <div class="dish-price">₹ 650</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Gajar Ka Halwa Parfait</div>
+                    <p class="dish-description">Traditional carrot pudding layered with whipped cream and candied pistachios, served chilled in a modern style.</p>
+                </div>
+                <div class="dish-price">₹ 700</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-info">
+                    <div class="dish-name">Masala Chai Crème brûlée</div>
+                    <p class="dish-description">A fusion dessert: classic French custard infused with authentic Indian spices, topped with a crisp caramelized sugar crust.</p>
+                </div>
+                <div class="dish-price">₹ 750</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contact & Reservations</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:dining@rajmahal.com">dining@rajmahal.com</a></p>
+                <p><i class="fas fa-phone"></i> +91 123 456 7890 (Ext. 2)</p>
+                <p><i class="fas fa-map-marker-alt"></i> Orchha, Madhya Pradesh, India</p>
+            </div>
+            <div class="footer-section map-link">
+                <h4>Locate Us</h4>
+                <a href="GOOGLE_MAP_LINK_HERE" target="_blank" class="map-link-btn">View on Google Maps <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="footer-section social-links">
+                <h4>Connect With Us</h4>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hotel Raj Mahal The Palace. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

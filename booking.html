@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay - Hotel Raj Mahal The Palace</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="booking.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="booking-header">
+        <div class="booking-header-top">
+            <div class="booking-logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Raj Mahal Logo"> <div class="hotel-details">
+                        <h1>Hotel Raj Mahal The Palace</h1>
+                        <p>Orchha, Jhansi Rd, near Chandra Shekhar Azad Park,,<br>Orchha, Madhya Pradesh, India</p>
+                    </div>
+                </a>
+            </div>
+            <nav class="booking-nav-links">
+                <a href="#">Photo Gallery</a>
+                <a href="#">Property Info</a>
+                <a href="#">Facilities</a>
+                <a href="#">Location</a>
+            </nav>
+        </div>
+
+        <div class="booking-search-bar">
+            <div class="search-input-group">
+                <div class="date-picker">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" id="checkInDate" value="01 Dec, 2025" readonly>
+                </div>
+                <div class="date-picker">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" id="checkOutDate" value="02 Dec, 2025" readonly>
+                </div>
+                <div class="nights-display">
+                    <input type="text" id="numNights" value="1 night" readonly>
+                </div>
+            </div>
+            <button class="btn-check-availability">CHECK AVAILABILITY</button>
+            <div class="booking-controls">
+                <button class="btn-secondary">Manage My Booking</button>
+                <div class="dropdown-select">
+                    <select class="btn-secondary">
+                        <option>Select Language</option>
+                        <option>English</option>
+                        <option>Hindi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="booking-main-content">
+        <div class="rooms-list-container">
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="er.webp" alt="Executive Room"> </div>
+                <div class="room-details">
+                    <h3>Executive Room</h3>
+                    <p class="room-description">Spacious and elegant, offering comfort and classic decor.</p>
+                    <a href="#" class="see-more">See More...</a>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i></span>
+                        <span><i class="fas fa-wifi"></i></span>
+                        <span><i class="fas fa-coffee"></i></span>
+                    </div>
+                </div>
+                <div class="room-booking-options">
+                    <div class="room-price">
+                        INR <span class="price-value">4,975</span> <span class="per-night">Per Night</span>
+                    </div>
+                    <div class="room-selectors">
+                        <div class="selector-group">
+                            <label>Select Room</label>
+                            <div class="quantity-control">
+                                <button class="qty-minus">-</button>
+                                <input type="text" value="0" readonly class="room-qty">
+                                <button class="qty-plus">+</button>
+                            </div>
+                        </div>
+                        <div class="selector-group">
+                            <label>Meal Plan</label>
+                            <div class="dropdown-select">
+                                <select>
+                                    <option>Room Only</option>
+                                    <option>Breakfast Included</option>
+                                    <option>Half Board</option>
+                                    <option>Full Board</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="dl.webp" alt="Deluxe Room"> </div>
+                <div class="room-details">
+                    <h3>Deluxe Room</h3>
+                    <p class="room-description">Luxurious space with ornate furnishings and scenic views.</p>
+                    <a href="#" class="see-more">See More...</a>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i></span>
+                        <span><i class="fas fa-wifi"></i></span>
+                        <span><i class="fas fa-bath"></i></span>
+                    </div>
+                </div>
+                <div class="room-booking-options">
+                    <div class="room-price">
+                        INR <span class="price-value">5,334</span> <span class="per-night">Per Night</span>
+                    </div>
+                    <div class="room-selectors">
+                        <div class="selector-group">
+                            <label>Select Room</label>
+                            <div class="quantity-control">
+                                <button class="qty-minus">-</button>
+                                <input type="text" value="0" readonly class="room-qty">
+                                <button class="qty-plus">+</button>
+                            </div>
+                        </div>
+                        <div class="selector-group">
+                            <label>Meal Plan</label>
+                            <div class="dropdown-select">
+                                <select>
+                                    <option>Room Only</option>
+                                    <option>Breakfast Included</option>
+                                    <option>Half Board</option>
+                                    <option>Full Board</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="sd.webp" alt="Super Deluxe Room"> </div>
+                <div class="room-details">
+                    <h3>Super Deluxe Room</h3>
+                    <p class="room-description">The ultimate in comfort and grandeur, with premium amenities.</p>
+                    <a href="#" class="see-more">See More...</a>
+                    <div class="room-features">
+                        <span><i class="fas fa-tv"></i></span>
+                        <span><i class="fas fa-wifi"></i></span>
+                        <span><i class="fas fa-minibar"></i></span>
+                        <span><i class="fas fa-concierge-bell"></i></span>
+                    </div>
+                </div>
+                <div class="room-booking-options">
+                    <div class="room-price">
+                        INR <span class="price-value">6,120</span> <span class="per-night">Per Night</span>
+                    </div>
+                    <div class="room-selectors">
+                        <div class="selector-group">
+                            <label>Select Room</label>
+                            <div class="quantity-control">
+                                <button class="qty-minus">-</button>
+                                <input type="text" value="0" readonly class="room-qty">
+                                <button class="qty-plus">+</button>
+                            </div>
+                        </div>
+                        <div class="selector-group">
+                            <label>Meal Plan</label>
+                            <div class="dropdown-select">
+                                <select>
+                                    <option>Room Only</option>
+                                    <option>Breakfast Included</option>
+                                    <option>Half Board</option>
+                                    <option>Full Board</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-container">
+            <div class="promo-code-box">
+                <h4>Promo Code</h4>
+                <div class="promo-input-group">
+                    <input type="text" placeholder="Promo Code">
+                    <button class="btn-apply">APPLY <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="reservation-summary-box">
+                <h4>Reservation Summary</h4>
+                <div class="summary-item">
+                    <span>Check In</span>
+                    <span class="summary-date" id="summaryCheckIn">01 Dec, 2025 <span class="nights-label">1 night</span></span>
+                </div>
+                <div class="summary-item">
+                    <span>Check Out</span>
+                    <span class="summary-date" id="summaryCheckOut">02 Dec, 2025</span>
+                </div>
+                <div class="summary-item total-charges">
+                    <span>Total Charges</span>
+                    <span class="summary-price">INR 0.00</span>
+                </div>
+                <div class="summary-item total-taxes">
+                    <span>Total Taxes</span>
+                    <span class="summary-price">INR 0.00</span>
+                </div>
+                <div class="summary-grand-total">
+                    <span>Grand Total</span>
+                    <span class="summary-price">INR <span id="grandTotalValue">0.00</span></span>
+                </div>
+                <button class="btn-confirm-reservation">CONFIRM & CONTINUE</button>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact" class="booking-footer">
+        <div class="footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contact & Bookings</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@rajmahal.com">info@rajmahal.com</a></p>
+                <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Orchha, Madhya Pradesh, India</p>
+            </div>
+            <div class="footer-section map-link">
+                <h4>Locate Us</h4>
+                <a href="GOOGLE_MAP_LINK_HERE" target="_blank" class="map-link-btn">View on Google Maps <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="footer-section social-links">
+                <h4>Connect With Us</h4>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hotel Raj Mahal The Palace. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="booking.js"></script> </body>
+</html>
