@@ -64,8 +64,6 @@ If your project includes login, provide demo credentials:
 ## 🚀 Deployment Link (Mandatory)
 
 Live Project Link:  
-
-https://your-deployed-project-link.com
-
+https://aryan03112005.github.io/Hotel-Management/
 
 --- 
